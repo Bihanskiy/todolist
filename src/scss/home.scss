@@ -1,0 +1,145 @@
+//====================================================================================================
+.todo {
+    // .todo_wrapper
+
+    &_wrapper {
+        width: 70%;
+        height: 100%;
+        @include adaptiveValue("padding-bottom", 10, 5);
+        @include adaptiveValue("padding-top", 10, 5);
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        @media (max-width: $mobile) {
+            width: 80%;
+            //height: 80%;
+        }
+        @media (max-width: $mobileSmall) {
+            width: 90%;
+            //height: 75%;
+        }
+    }
+
+    // .todo_form
+
+    &_form {
+        width: 80%;
+        padding: 10px 0px;
+        margin: 0px 0px 15px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $mobileSmall) {
+            width: 90%;
+        }
+    }
+
+    // .todo_name
+
+    &_name {
+        min-width: 80%;
+        height: 40px;
+        border-radius: 5px;
+        @include adaptiveValue("padding", 15, 5);
+        @media (max-width: $mobile) {
+            width: 100%;
+            margin: 0px 0px 15px 0px;
+        }
+    }
+
+    // .todo_wrapp
+
+    &_wrapp {
+        position: relative;
+        width: 80%;
+        height: 70%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-sizing: content-box;
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(19, 97, 158);
+        }
+        @media (max-width: $mobileSmall) {
+            width: 90%;
+        }
+        .sortable-fallback {
+            display: none;
+        }
+        .sortable-chosen {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    // .todo_item
+
+    &_item {
+        width: 99%;
+        padding: 11px 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row-reverse;
+        //justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 10px 10px 0px rgba(17, 17, 17, 0.041);
+        &:not(:last-child) {
+            margin: 0px 0px 10px 0px;
+        }
+
+        .todo_text {
+            flex: 1 1 auto;
+            margin: 0px 0px 0px 10px;
+        }
+
+        .todo_input {
+            order: 1;
+        }
+
+        ._icon-x-symbol {
+            cursor: pointer;
+        }
+    }
+
+    ._icon-x-symbol {
+    }
+
+    // .todo_button
+
+    &_button {
+    }
+
+    &_add {
+        width: 17%;
+        height: 40px;
+        background-color: rgb(79, 140, 255);
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: rgb(38, 113, 253);
+            }
+        }
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+    }
+}
+
+.completed {
+    .todo_text {
+        text-decoration: line-through;
+    }
+}
+
+//====================================================================================================

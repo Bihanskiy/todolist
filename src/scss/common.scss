@@ -1,0 +1,71 @@
+// Заголовки, общие БЄМ блоки и проче...
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 15%);
+    @include adaptiveValue("min-height", 75, 60);
+    //min-height: 50px;
+
+    // .header__wrapper
+    &__wrapper {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+        }
+        @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(3px);
+            @media (any-hover: hover) {
+                &:hover {
+                    background: rgba(255, 255, 255, 0.8);
+                    backdrop-filter: blur(3px);
+                }
+            }
+        }
+    }
+
+    // .header-container
+
+    &-container {
+    }
+}
+
+.main {
+    // .main_content
+    &_content {
+        margin-left: 0px;
+        transition: all 0.3s ease 0s;
+    }
+}
+.page {
+    // .page__container
+    &__container {
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        @include adaptiveValue("padding-top", 130, 90);
+        @include adaptiveValue("padding-bottom", 50, 45);
+        padding: 130px 0px 50px 0px;
+        @media (max-width: $pc) {
+            margin-top: 5px;
+        }
+        @media (max-width: $mobile) {
+            height: 75vh;
+        }
+        @media (max-width: $mobileSmall) {
+            height: 80vh;
+        }
+    }
+}

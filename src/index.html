@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/header.html',{})
+        <main class="main_content page">
+            <div class="page__container todo">
+                <div class="todo_wrapper">
+                    <div class="todo_form">
+                        <input type="text" id="task-name-input" class="todo_name todo_form-item">
+                        <button id="add-task-btn" class="todo_add todo_form-item">Add</button>
+                    </div>
+                    <div class="todo_wrapp task-list">
+                        <p id="start-message" class="todo_message">Немає нових завдань</p>
+                        <!-- <div id="" class="todo_item _icon-x-symbol">
+                            <p>Нет новых задачНет новых задачНет новых задачНет новых задачНет новых задачНет новых задачНет новых задачНет новых задачНет новых задач</p>
+                        <input type="checkbox">
+                        </div>
+                        <div id="" class="todo_item _icon-x-symbol"  draggable="true">Нет новых задач</div>
+                        <div id="" class="todo_item _icon-x-symbol"  draggable="true">Нет новых задач</div> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- @@include('html/footer.html',{}) -->
+    </div>
+    @@include('html/popup.html',{})
+    @@include('html/js.html',{})
+</body>
+
+</html>
